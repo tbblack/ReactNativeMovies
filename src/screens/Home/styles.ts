@@ -5,6 +5,8 @@ export const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: '#242A32',
+    },
+    header: {
       padding: 25,
     },
     headerText: {
@@ -20,5 +22,13 @@ export const styles = StyleSheet.create({
       borderRadius: 16,
       marginTop: 24,
       marginBottom: 20,
-    }
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+    },
+    input: {
+      color: '#fff',
+      width: '80%',
+      paddingLeft: 15,
+    },
   });
