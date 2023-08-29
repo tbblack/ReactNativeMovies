@@ -47,10 +47,13 @@ export function Home(){
 
         if(respose.data.results.length == 0){
             setNoResult(true);
+            setLoading(false);
+            setSearchResultMovies([]);
         } else {
+            setNoResult(false);
             setSearchResultMovies(respose.data.results);
+            setLoading(false);
         }
-        setLoading(false);
     };
 
     const handleSearch = (text: string) => {
@@ -79,6 +82,12 @@ export function Home(){
                         />
                     <MagnifyingGlass color="#fff" size={25} weight="light" />
                 </View>
+
+                {noResult && (
+                    <Text style={styles.noResultText}>
+                        Nenhum resultado encontrado para "{search}"</Text>
+                )}
+
             </View>
             <View>
                 <FlatList
